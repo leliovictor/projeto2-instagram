@@ -144,7 +144,7 @@ main {
 }
 
 .story p {
-    width: 58px;
+    width: 66px;
     height: 19px;
     text-align: center;
     font-family: 'Roboto';
@@ -153,6 +153,8 @@ main {
     font-size: 12px;
     line-height: 14px;
     color: #262626;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .feed {
@@ -363,6 +365,24 @@ main {
     align-items: center;
     color: #C7C7C7;
     margin-bottom: 18px;
+}
+
+.bottom-bar {
+    width: 100vw;
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    position: fixed;
+    bottom: 0;
+    background: #FFFFFF;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+video {
+    width: 100%;
 }
 
 
