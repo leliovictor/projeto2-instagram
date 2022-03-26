@@ -370,7 +370,7 @@ main {
 .bottom-bar {
     width: 100vw;
     height: 54px;
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     font-size: 22px;
@@ -442,6 +442,10 @@ video {
 
     .post_content {
         height: fit-content;
+    }
+
+    .bottom-bar {
+        display: flex;
     }
 
 
