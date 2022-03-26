@@ -11,6 +11,10 @@ nav {
     border-bottom: 1px solid #DBDBDB;
     background: #FFFFFF;
     margin-bottom: 34px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
 
 .nav-logo {
@@ -19,19 +23,15 @@ nav {
     align-items: center;
 }
 
-.nav-logo div {
+.vertical-line {
     height: 22px;
     width: 1px;
-    background: #000000;
-    /*MUDAR ESSA COR NO FINAL*/
+    margin: 0 10px;
+    background-color: #DBDBDB;
 }
 
 .nav-logo ion-icon {
     font-size: 19px;
-}
-
-.vertical-border {
-    margin: 0 10px;
 }
 
 .logo {
@@ -71,6 +71,7 @@ nav {
 main {
     display: flex;
     justify-content: center;
+    padding-top: 88px;
 }
 
 .stories {
@@ -78,13 +79,23 @@ main {
     height: 118px;
     margin-bottom: 24px;
     background: #FFFFFF;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
     border: 1px solid #DBDBDB;
     box-sizing: border-box;
     border-radius: 3px;
     position: relative;
+}
+
+.stories > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow:scroll;
+    box-sizing: border-box;
+}
+
+.stories div::-webkit-scrollbar {
+    display: none;
 }
 
 .stories ion-icon {
@@ -93,12 +104,16 @@ main {
     position: absolute;
     right: 8px;
     top: 46px;
-    z-index: 2;
+    z-index: 1;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .story:first-child {
     margin-left: 18px;
+}
+
+.story:last-child {
+    margin-right: 18px;
 }
 
 .story {
@@ -126,7 +141,6 @@ main {
     position: absolute;
     top: 5px;
     left: 5px;
-    z-index: 1;
 }
 
 .story p {
@@ -141,13 +155,109 @@ main {
     color: #262626;
 }
 
-/*COLOCAR O FEED AQUI ANTES DO SIDE-BAR */
+.feed {
+    width: 614px;
+}
+.post {
+    width: 100%;
+    margin-bottom: 60px;
+    border: 1px solid #DBDBDB;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
 
+.post ion-icon {
+    font-size: 18px;
+}
 
+.post_profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 17px;
+}
+
+.post_profile div {
+    display: flex;
+    align-items: center;
+    height: 61px;
+}
+
+.post_profile div img {
+    margin-right: 15px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.post_profile div h1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #262626;
+}
+
+.post_content {
+    width: 100%;
+    height: 612px;
+    border-top: 1px solid #DBDBDB;
+    border-bottom: 1px solid #DBDBDB;
+    box-sizing: border-box;
+}
+
+.post_interaction {
+    height: 38px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 18px;
+}
+
+.post_interaction div ion-icon:nth-child(2) {
+    margin: 0 14px;
+}
+
+.post_who-liked {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    padding: 0 17px;
+}
+
+.post_who-liked img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.post_who-liked p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 16px;
+
+    color: #000000;
+}
+
+.post_who-liked p strong {
+    font-weight: 700;
+}
+
+.side-bar_fixed {
+    width: 293px;
+    margin-left: 29px;
+}
 
 .side-bar {
     width: 293px;
-    margin-left: 29px;
+    height: fit-content;
+    position: fixed;
+    margin: 0;
 }
 
 .profile {
@@ -253,4 +363,69 @@ main {
     align-items: center;
     color: #C7C7C7;
     margin-bottom: 18px;
+}
+
+
+@media (max-width: 935px) {
+    .side-bar_fixed {
+        display: none;;
+    }
+
+    nav {
+        justify-content: space-between;
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 614px) {
+   
+    .input {
+        display: none;
+    }
+
+    .nav-icons {
+        display: none;
+    }
+
+    .vertical-line {
+        display: none;
+    }
+
+    .mobile-only {
+        display: initial;
+    }
+
+    .nav-logo {
+        width: 100vw;
+        justify-content: space-between;
+    }
+
+    main {
+        padding-top: 54px;
+    }
+    
+    .stories {
+        width: 100vw;
+        border: none;
+        background: none;
+        margin-bottom: 0;
+    }
+
+    .stories ion-icon {
+        display: none;
+    }
+
+    .feed {
+        width: 100vw;
+    }
+
+    .post_content {
+        height: fit-content;
+    }
+
+
+
+
+
 }
